@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+import React from "react";
+import { ToastContainer } from "react-toastify";
+import BasePage from "./router/basePage";
 
-import './custom.css'
+// css
+import "react-toastify/dist/ReactToastify.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/css/responsive.css";
+import "./assets/css/main.css";
 
-export default class App extends Component {
-  static displayName = App.name;
-
-  render () {
-    return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
-      </Layout>
-    );
-  }
+function App() {
+  return (
+    <div className="app">
+      <BasePage />
+      <ToastContainer position="bottom-right" />
+    </div>
+  );
 }
+
+export default App;

@@ -1,0 +1,129 @@
+/* menu */
+.menu {
+  padding: 15px 0;
+}
+.menu-branch {
+  padding: 0px 5px;
+}
+
+.menu a,
+.menu a:hover {
+  text-decoration: none;
+  width: 100%;
+}
+.menu ul li {
+  border-left: 4px solid transparent;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+.menu ul .firstLevel-li {
+  transition: all 0.5s linear;
+}
+.menu ul .firstLevel-li:hover {
+  background-color: rgba(125, 196, 166, 0.05);
+  border-left: 4px solid var(--neon);
+}
+
+.menu ul li a,
+.menu ul li .sidebar-dropdown {
+  position: relative;
+  padding: 8px 5px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--white);
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+
+.menu ul li i {
+  margin-right: 8px;
+  font-size: 12px;
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+}
+.menu ul li i.icon-rotate {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(180deg);
+}
+
+.menu ul li a:hover,
+.menu ul li a.active {
+  color: var(--white);
+}
+
+.menu ul li a.active {
+  color: var(--neon);
+}
+
+/* menu-bullet */
+span.menu-bullet {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #b1b1b1;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+a.active span.menu-bullet {
+  background: var(--neon);
+}
+
+/* 1st level dropdown */
+.menu ul li > ul.dropdown-content li a {
+  text-transform: capitalize;
+}
+.menu ul li > ul.dropdown-content li a.active {
+  color: var(--neon) !important;
+}
+.menu ul li a.sidebar-dropdown.active {
+  background-color: rgba(125, 196, 166, 0.05);
+}
+
+.dropdown-content {
+  height: 0;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+  background-color: rgba(125, 196, 166, 0.03);
+  transition: all 0.3s;
+}
+.menu .firstLabel-dropdown-show,
+.menu .secondLevel-dropdown-show {
+  /* display: block; */
+  height: auto;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+.menu .sidebar-second-dropdown {
+  padding: 5px 30px !important;
+  color: var(--white);
+}
+ul.dropdown-content li a {
+  color: #b1b1b1 !important;
+  font-size: 13px;
+  line-height: 1.62;
+  padding: 5px 30px !important;
+}
+
+ul.dropdown-content li > ul.dropdown-content.dropdown-second-content li a {
+  padding: 5px 0 5px 50px !important;
+}
+
+@media (max-width: 767px) {
+  .logo i.fa-bars {
+    display: block;
+  }
+}
+
+ul.dropdown-content
+  li
+  > ul.dropdown-content.dropdown-second-content
+  li
+  a.active {
+  color: var(--neon);
+}
