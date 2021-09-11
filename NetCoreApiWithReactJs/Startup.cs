@@ -20,8 +20,10 @@ namespace NetCoreApiWithReactJs
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //add swagger services
+            services.AddSwaggerGen();
 
-            services.AddControllersWithViews();
+            services.AddControllers();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -43,6 +45,14 @@ namespace NetCoreApiWithReactJs
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            //configure swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ispat API");
+                c.RoutePrefix = "swaggerui";
+            });
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
